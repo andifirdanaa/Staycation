@@ -1,31 +1,34 @@
-import React from 'react'
-import {render} from '@testing-library/react'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Button from './index'
+import React from "react";
+import { render } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-test("seharusnya button tidak bisa di klik klo sudah tampil", () => {
-    const {container} = render(<Button isDisabled></Button>)
+import Button from "./index";
 
-    expect (container.querySelector("span.disabled")).toBeInTheDocument();
+test("Should not allowed click button if isDisabled is present", () => {
+  const { container } = render(<Button isDisabled></Button>);
+
+  expect(container.querySelector("span.disabled")).toBeInTheDocument();
 });
 
-test("seharusnya ada spinner loading", () => {
+test("Should render loading/spinner", () => {
   const { container, getByText } = render(<Button isLoading></Button>);
 
-expect(getByText(/loading/i)).toBeInTheDocument();
+  expect(getByText(/loading/i)).toBeInTheDocument();
   expect(container.querySelector("span")).toBeInTheDocument();
 });
 
-test("seharusnya ini <a> ", () => {
+test("Should render <a> tag", () => {
   const { container } = render(<Button type="link" isExternal></Button>);
 
   expect(container.querySelector("a")).toBeInTheDocument();
 });
 
-test("seharusnya ini <link> component", () => {
-  const { container } = render(<Router><Button type="link"></Button></Router>);
+test("Should render <Link> component", () => {
+  const { container } = render(
+    <Router>
+      <Button href="" type="link"></Button>
+    </Router>
+  );
 
   expect(container.querySelector("a")).toBeInTheDocument();
 });
-
-
