@@ -7,7 +7,7 @@ export default function Footer() {
       <footer>
         <div className="container">
           <div className="row">
-            <div className="col-auto" style={{width:"315px", marginRight:15}}>
+            <div className="col-4" style={{marginRight:15}}>
               <IconText />
               <p className="brand-tagline">
                 We kaboom your beauty holiday instanly and memorable
