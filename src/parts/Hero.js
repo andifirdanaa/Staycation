@@ -2,9 +2,6 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 import ImageHero from "assets/images/img-hero.jpg";
 import ImageHero_ from "assets/images/img-frame-hero.jpg";
-import IconCities from "assets/images/icons/Ic_cities.svg";
-import IconTraveler from "assets/images/icons/Ic_traveler.svg";
-import IconTreasure from "assets/images/icons/Ic_treasure.svg";
 import formatNumber from "utils/formatNumber";
 
 import Button from "elements/button";
@@ -12,7 +9,7 @@ import Button from "elements/button";
 export default function Hero(props) {
    function showMostPicked() {
      window.scrollTo({
-       top: props.refMostPicked.current.offsetTop - 30,
+       top: props.refMostPicked.current.offsetTop  - 30,
        behavior: "smooth",
      });
    }
@@ -47,7 +44,7 @@ export default function Hero(props) {
                 <img
                   width="36"
                   height="36"
-                  src={IconTraveler}
+                  src={"images/icons/Ic_traveler.svg"}
                   alt={`${props.data.travelers} travelers`}
                 />
                 <h6 className="mt-3">
@@ -61,7 +58,7 @@ export default function Hero(props) {
                 <img
                   width="36"
                   height="36"
-                  src={IconTreasure}
+                  src={"images/icons/Ic_treasure.svg"}
                   alt={`${props.data.treasures} treasure`}
                 />
                 <h6 className="mt-3">
@@ -75,7 +72,7 @@ export default function Hero(props) {
                 <img
                   width="36"
                   height="36"
-                  src={IconCities}
+                  src={"images/icons/Ic_cities.svg"}
                   alt={`${props.data.cities} cities`}
                 />
                 <h6 className="mt-3">
